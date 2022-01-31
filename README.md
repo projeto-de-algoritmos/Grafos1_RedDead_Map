@@ -12,7 +12,7 @@ Temas:
  
  (Apague essa seção)
 
-# NomedoProjeto
+# Red Dead Mission
 
 **Número da Lista**: X<br>
 **Conteúdo da Disciplina**: XXXXXXXXXX<br>
@@ -20,18 +20,18 @@ Temas:
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 18/0106821  |  Mateus Gomes do Nascimento |
+| 18/0132245  |  Vinicius de Sousa Saturnino |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+Projeto de Grafo 1 para mostrar a menor rota entre o player e a missão atual no mapa de Read Dead Remeption 2 utilizando Grafo.
 
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em funcionamento.
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
+**Linguagem**: python (back-end) & javascript (front-end)<br>
+**Framework**: flask & react js<br>
 Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
 
 ## Uso 
