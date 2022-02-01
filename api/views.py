@@ -3,17 +3,42 @@ from server import server
 app = server.app
 
 cities = {
-    "title": "Red Dead Redemption II cities",
-    "cities": [
-        "Blackwater",
-        "Valentine",
-        "Annesburg",
-        "Saint Denis",
-        "Mount Hagen",
-        "Rhodes",
-        "Strawberry",
-        "Lagras"
-    ]
+        "Blackwater": [
+            "Strawberry",
+            "Valentine",
+            "Armadillo"
+        ],
+        "Valentine": [
+            "Rhodes",
+            "Blackwater",
+            "Mount Hagen"
+        ],
+        "Annesburg": [
+            "Van Horn",
+            "Saint Denis",
+            "Rhodes"
+        ],
+        "Van Horn": ["Annesburg"],
+        "Saint Denis": [
+            "Annesburg",
+            "Rhodes"
+        ],
+        "Mount Hagen": ["Valetine"],
+        "Rhodes": [
+            "Valetine",
+            "Saint Denis",
+            "Annesburg"
+        ],
+        "Strawberry": [
+            "Blackwater",
+            "Armadillo"
+        ],
+        "Tumbleweed": ["Armadillo"],
+        "Armadillo": [
+            "Tumbleweed",
+            "Strawberry",
+            "Blackwater"
+        ]
 }
 
 class RedDeadCitiesView():
