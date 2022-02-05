@@ -1,4 +1,5 @@
 from server import server
+from models import GraphModel
 
 app = server.app
 
@@ -40,6 +41,8 @@ cities = {
             "Blackwater"
         ]
 }
+
+graph = GraphModel(edges=cities)
 
 class RedDeadCitiesView():
     """main view of Red Dead API"""
