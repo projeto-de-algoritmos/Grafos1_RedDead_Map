@@ -9,7 +9,7 @@ class GraphModel():
         self.graph = dict
         self.add_edges(edges)
     
-    def add_egdes(self, edges) -> None:
+    def add_edges(self, edges) -> None:
         """
         Add edges to graph as dictionary of lists
         """
@@ -21,7 +21,7 @@ class GraphModel():
         """
         edges = []
         for key in self.graph.keys():
-          edges.append(key)
+            edges.append((key, self.graph[key]))
         return edges
 
     def get_nodes(self) -> list:
@@ -31,4 +31,7 @@ class GraphModel():
         return list(self.graph.keys())
 
     def get_neighbors(self) -> dict:
+        """
+        Returns all neighbors from graph
+        """
         return self.graph
