@@ -10,3 +10,4 @@ services:
     volumes:
       - ./api:/api
     container_name: red_dead_api
+    restart: on-failure
