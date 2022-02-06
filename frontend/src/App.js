@@ -1,7 +1,11 @@
-function App() {
+import React from 'react';
+import './global.css';
+
+import Routes from './routes';
+
+const App = () => {
   return (
-    <div className="App">
-    </div>
+    <Routes />
   );
 }
 
