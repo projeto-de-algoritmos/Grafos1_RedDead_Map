@@ -1,3 +1,4 @@
+from flask import json
 from server import server
 from models import GraphModel
 
@@ -50,4 +51,4 @@ class RedDeadCitiesView():
     @app.route('/', methods=['GET'])
     def get() -> dict:
         """get method"""
-        return cities
+        return json.dumps(cities), 200

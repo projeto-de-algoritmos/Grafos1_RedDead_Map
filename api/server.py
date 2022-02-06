@@ -8,7 +8,7 @@ class Server():
         self.app = Flask(__name__)
 
     def run(self) -> None:
-        self.app.run(debug=True)
+        self.app.run(debug=True, host="0.0.0.0")
 
 
 server = Server()
