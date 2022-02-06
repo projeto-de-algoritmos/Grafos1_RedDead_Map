@@ -10,8 +10,8 @@ export const Container = styled.div`
 `;
 
 export const Logo = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 80px;
+  height: 80px;
 `;
 
 export const Text = styled.h1`
