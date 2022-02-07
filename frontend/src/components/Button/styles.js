@@ -4,7 +4,7 @@ import { colors } from '../../theme/colors';
 
 export const Container = styled.button`
   width: 120px;
-  height: 50px;
+  height: 40px;
   background: ${colors.red};
   border: 0;
   border-radius: 8px;
@@ -21,5 +21,5 @@ export const Container = styled.button`
 export const Text = styled.p`
   font-weight: 700;
   color: ${colors.white};
-  font-size: 24px;
+  font-size: 20px;
 `;

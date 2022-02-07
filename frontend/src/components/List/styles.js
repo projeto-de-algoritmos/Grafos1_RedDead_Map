@@ -28,7 +28,6 @@ export const Title = styled.h1`
 
 export const ListContainer = styled.div`
   display: flex;
-  ${(title) => title && 'border-radius: 8px;'}
   padding: 10px 20px;
   background: ${colors.yellow.light};
   border-bottom-right-radius: 8px;
