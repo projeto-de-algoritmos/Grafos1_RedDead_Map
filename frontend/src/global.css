@@ -3,9 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-image: #fff;
   color: black;
-  font-family: "Roboto", sans-serif;
+  font: 400 18px "Roboto", sans-serif;
   min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
 }
