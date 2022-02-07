@@ -3,9 +3,16 @@ import './global.css';
 
 import Routes from './routes';
 
+import logo from './assets/logo.png';
+
+import { Navbar } from './components/Navbar';
+
 const App = () => {
   return (
-    <Routes />
+    <>
+      <Navbar imageSrc={logo} />
+      <Routes />
+    </>
   );
 }
 
