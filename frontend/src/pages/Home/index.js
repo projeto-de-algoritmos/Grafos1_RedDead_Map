@@ -12,7 +12,7 @@ import Select from 'react-select';
 import { Button } from '../../components/Button';
 import { List } from '../../components/List';
 
-import { SelectSection, PathSection, MapSection, Container, Footer, SelectContainer, ErrorMessageContainer, ErrorMessage } from './styles';
+import { IntroSection, IntroText, SelectSection, PathSection, MapSection, Container, Footer, SelectContainer, ErrorMessageContainer, ErrorMessage } from './styles';
 
 // custom styles
 const customStyles = {
@@ -123,6 +123,9 @@ const Home = () => {
   return (
       <>
         <Container>
+          <IntroSection>
+            <IntroText>Bem-vindo(a) ao projeto Red Dead Map!<br /> Neste projeto, você pode encontrar o menor caminho entre uma cidade e outra do mapa do jogo Red Dead Redemption II.</IntroText>
+          </IntroSection>
           <SelectSection>
             <SelectContainer>
               <Select

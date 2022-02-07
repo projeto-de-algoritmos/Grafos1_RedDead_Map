@@ -10,6 +10,19 @@ export const Container = styled.div`
   margin-top: 35px;
 `;
 
+export const IntroSection = styled.div`
+  width: 800px;
+  border-radius: 8px;
+  background: black;
+  color: white;
+  padding: 10px;
+  margin-bottom: 30px;
+`;
+
+export const IntroText = styled.p`
+  color: colors.white;
+`;
+
 export const SelectSection = styled.div`
   display: flex;
   align-items: center;
