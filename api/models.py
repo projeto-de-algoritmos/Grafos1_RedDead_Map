@@ -1,6 +1,6 @@
 class GraphModel():
     
-    def __init__(self, edges) -> None: 
+    def __init__(self, edges: dict) -> None: 
         """
         Init graph as a dictionary
 
@@ -9,7 +9,7 @@ class GraphModel():
         self.graph = dict
         self.add_edges(edges)
     
-    def add_edges(self, edges) -> None:
+    def add_edges(self, edges: dict) -> None:
         """
         Add edges to graph as dictionary of lists
         """
