@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 
+import horseMan from '../../assets/horse_man.png';
+
 import api from '../../services/api';
 
 import { colors } from '../../theme/colors';
 
 import Select from 'react-select';
 import { Button } from '../../components/Button';
+import { List } from '../../components/List';
 
-import { SelectSection } from './styles';
+import { SelectSection, PathSection } from './styles';
 
 const Home = () => {
 
@@ -85,6 +88,11 @@ const Home = () => {
         />
         <Button text='Localizar' onClick={findPath} />
       </SelectSection>
+      <PathSection>
+        {path && (
+          <List items={path} title='Rotas' imageSrc={horseMan} />
+        )}
+      </PathSection>
     </div>
   )
 };
