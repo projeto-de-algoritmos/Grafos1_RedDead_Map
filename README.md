@@ -1,4 +1,4 @@
-# Red Dead Mission
+# Red Dead Map
 
 ![Mapa Red Dead](./frontend/src/assets/logo.png)
 
