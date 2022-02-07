@@ -35,3 +35,30 @@ class GraphModel():
         Returns all neighbors from graph
         """
         return self.graph
+
+    def find_shortest_path(self, start: str, end: str, path=[]) -> list:
+        """
+        Find shortest path using BFS seach on the graph
+        """
+        explored = list()
+        queue = list()
+        queue.append([start])
+
+        if start == end:
+            return queue # start point is equal to end point
+        
+        while queue:
+            path = queue.pop(0)
+            node = path[-1]
+
+            if node not in explored:
+                neighbors = self.graph.get(node, [])
+                for neighbour in neighbors:
+                    new_path = list(path)
+                    new_path.append(neighbour)
+                    queue.append(new_path)
+
+                    if neighbour == end:
+                        return new_path # returns shortest path
+
+        return False # there is no possible path
