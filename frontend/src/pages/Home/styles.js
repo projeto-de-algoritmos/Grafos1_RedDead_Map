@@ -16,6 +16,10 @@ export const SelectSection = styled.div`
   gap: 20px;
 `;
 
+export const SelectContainer = styled.div`
+  width: 330px;
+`
+
 export const PathSection = styled.div`
   margin-top: 25px;
   margin-bottom: 25px;

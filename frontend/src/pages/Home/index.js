@@ -12,8 +12,9 @@ import Select from 'react-select';
 import { Button } from '../../components/Button';
 import { List } from '../../components/List';
 
-import { SelectSection, PathSection, MapSection, SearchSection, Footer } from './styles';
+import { SelectSection, PathSection, MapSection, SearchSection, Footer, SelectContainer } from './styles';
 
+// custom styles
 const customStyles = {
   content: {
       display: 'flex',
@@ -29,6 +30,29 @@ const customStyles = {
       border: 'none'
   },
 };
+
+const selectStyles = {
+  menu: (provided, state) => ({
+    ...provided,
+    border: `1px solid ${colors.black}`,
+  }),
+  control: (provided, state) => ({
+    ...provided,
+    boxShadow: state.isFocused && `1px solid ${colors.black}`, 
+    border: state.isFocused && `1px solid ${colors.black}`, 
+    '&:hover': {
+      boxShadow: state.isFocused && `1px solid ${colors.black}`,
+      border: state.isFocused && `1px solid ${colors.black}`
+    }, 
+  }),
+  option: (provided, state) => ({
+    ...provided,
+    background: state.isSelected ? colors.red : state.isFocused && colors.lightRed,
+    color: state.isSelected ? colors.white : colors.black,
+    padding: 15,
+  })
+}
+// =====================================================================================
 
 const Home = () => {
 
@@ -82,35 +106,31 @@ const Home = () => {
     return data;
   }
 
-  const selectStyles = {
-    option: (provided, state) => ({
-      ...provided,
-      background: state.isSelected && colors.red,
-      color: state.isSelected ? colors.white : colors.black,
-      padding: 15,
-    })
-  }
-
   return (
       <>
         <SearchSection>
         <SelectSection>
+          <SelectContainer>
             <Select
-            options={cities}
-            placeholder='Escolha uma cidade inicial...'
-            styles={selectStyles}
-            onChange={(e)=>{
-                setStartCity(e.value);
-            }}
+              options={cities}
+              placeholder='Escolha uma cidade inicial...'
+              styles={selectStyles}
+              onChange={(e)=>{
+                  setStartCity(e.value);
+              }}
+              style={{width: '400px'}}
             />
+          </SelectContainer>
+          <SelectContainer>
             <Select
-            options={cities}
-            placeholder='Escolha uma cidade de destino...'
-            styles={selectStyles}
-            onChange={(e)=>{
-                setEndCity(e.value);
-            }}
+              options={cities}
+              placeholder='Escolha uma cidade de destino...'
+              styles={selectStyles}
+              onChange={(e)=>{
+                  setEndCity(e.value);
+              }}
             />
+          </SelectContainer>
             <Button text='Localizar' onClick={findPath} />
         </SelectSection>
         <MapSection src={MapRD} width="850px" />
