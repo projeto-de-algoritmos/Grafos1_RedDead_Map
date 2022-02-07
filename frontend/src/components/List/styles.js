@@ -29,7 +29,7 @@ export const Title = styled.h1`
 export const ListContainer = styled.div`
   display: flex;
   padding: 10px 20px;
-  background: ${colors.yellow.light};
+  background: ${colors.white};
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
   justify-content: space-between;
