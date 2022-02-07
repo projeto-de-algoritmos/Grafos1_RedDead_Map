@@ -18,15 +18,21 @@ Projeto de Grafo 1 para mostrar a menor rota entre o player e a missão atual no
 
 <figcaption>Imagem 1: Mapa do Jogo</figcaption>
 
-![Mapa Red Dead](./frontend/src/assets/map.png)
+![Mapa Red Dead](./.github/map.png)
 
 <figcaption>Imagem 2: Tela inicial</figcaption>
 
-![Home Red Dead](./frontend/src/assets/home.jpeg)
+![Home Red Dead](./.github/home.jpeg)
 
 <figcaption>Imagem 3: Modal de resultado</figcaption>
 
-![Search Red Dead](./frontend/src/assets/search.jpeg)
+![Search Red Dead](./.github/search.jpeg)
+
+## Demo
+
+<figcaption>Vídeo 1: Demonstração do projeto
+
+![Demo Red Dead](./.github/demo.gif)
 
 ## Instalação 
 **Linguagem**: python (back-end) & javascript (front-end)<br>
