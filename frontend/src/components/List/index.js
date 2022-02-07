@@ -17,7 +17,7 @@ const List = ({items, title, imageSrc}) => {
           ))}
         </ItemsContainer>
         <ImageContainer>
-          <Image src={imageSrc} />
+          <Image alt='Horse Man' src={imageSrc} />
         </ImageContainer>
       </ListContainer>
     </Container>

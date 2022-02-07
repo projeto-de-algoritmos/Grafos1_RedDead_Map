@@ -3,7 +3,7 @@ import { Container , Logo } from './styles';
 
 const Navbar = ({ imageSrc }) => (
   <Container>
-    <Logo src={imageSrc} />
+    <Logo alt='Red Dead Redemption II' src={imageSrc} />
   </Container>
 )
 
