@@ -60,3 +60,8 @@ class RedDeadCitiesView():
         start = body.get("start")
         end = body.get("end")
         return json.dumps(graph.find_shortest_path(start=start, end=end))
+
+    @app.route('/cities', methods=['GET'])
+    def get_cities() -> dict:
+        """returns all nodes"""
+        return json.dumps(graph.get_nodes()), 200
