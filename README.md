@@ -1,21 +1,9 @@
-**!! Atenção: Renomeie o seu repositório para (Tema)_(NomeDoProjeto). !!** 
-
-Temas:
- - Grafos1
- - Grafos2
- - PD
- - D&C
- - Greed
- - Final 
- 
- **!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!**
- 
- (Apague essa seção)
-
 # Red Dead Mission
 
-**Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+![Mapa Red Dead](./frontend/src/assets/logo.png)
+
+**Número da Lista**: 1<br>
+**Conteúdo da Disciplina**: Grafo 1<br>
 
 ## Alunos
 |Matrícula | Aluno |
@@ -23,23 +11,54 @@ Temas:
 | 18/0106821  |  Mateus Gomes do Nascimento |
 | 18/0132245  |  Vinicius de Sousa Saturnino |
 
-## Sobre 
+## Sobre
 Projeto de Grafo 1 para mostrar a menor rota entre o player e a missão atual no mapa de Read Dead Remeption 2 utilizando Grafo.
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+
+<figcaption>Imagem 1: Mapa do Jogo</figcaption>
+
+![Mapa Red Dead](./frontend/src/assets/map.png)
+
+<figcaption>Imagem 2: Tela inicial</figcaption>
+
+![Home Red Dead](./frontend/src/assets/home.jpeg)
+
+<figcaption>Imagem 3: Modal de resultado</figcaption>
+
+![Search Red Dead](./frontend/src/assets/search.jpeg)
 
 ## Instalação 
 **Linguagem**: python (back-end) & javascript (front-end)<br>
 **Framework**: flask & react js<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+
+Um dos pré requisitos para rodar o projeto é ter o `docker` e o `docker-compose` instalados. Outro pré-requisito é ter o `python` versão 3+.
+
+Para subir o docker basta rodar o camando na raíz do projeto:
+
+```shell
+$ docker-compose up --build
+```
+
+Uma segunda alternativa (caso não possua o `docker` e o `docker-compose` instalados ou não queira perder tempo instalando) é rodar o script `main.py` em `api.main.py` com o comando:
+
+```shell
+$ python3 api/main.py
+```
+
+para subir o frontend basta executar os comandos dentro da pasta frontend:
+
+```shell
+$ yarn
+```
+e
+
+```shell
+$ yarn start
+```
+
+E acessar o endereço `http://localhost:3000` no seu navegador.
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
 
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
-
-
-
-
+O mapa do Game estará mostrado com as rotas e ligações entre as cidades. Basta escolher a cidade de origem e a cidade de destino para que a API retorne o caminho mais otimizado a ser percorrido.
