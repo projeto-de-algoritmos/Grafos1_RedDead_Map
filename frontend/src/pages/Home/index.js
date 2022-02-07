@@ -12,7 +12,7 @@ import Select from 'react-select';
 import { Button } from '../../components/Button';
 import { List } from '../../components/List';
 
-import { SelectSection, PathSection, MapSection, SearchSection, Footer, SelectContainer } from './styles';
+import { SelectSection, PathSection, MapSection, Container, Footer, SelectContainer, ErrorMessageContainer, ErrorMessage } from './styles';
 
 // custom styles
 const customStyles = {
@@ -61,6 +61,7 @@ const Home = () => {
   const [endCity, setEndCity] = useState('');
   const [path, setPath] = useState();
   const [isOpen, setIsOpen] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const handleCloseModal = async () => {
       setIsOpen(false);
@@ -92,8 +93,11 @@ const Home = () => {
 
   const findPath = async () => {
     if(startCity === '' || endCity === ''){
+      setIsError(true);
       return;
     }
+
+    setIsError(false);
 
     const { data } = await api.post('/path', {
         start: startCity,
@@ -108,46 +112,51 @@ const Home = () => {
 
   return (
       <>
-        <SearchSection>
-        <SelectSection>
-          <SelectContainer>
-            <Select
-              options={cities}
-              placeholder='Escolha uma cidade inicial...'
-              styles={selectStyles}
-              onChange={(e)=>{
-                  setStartCity(e.value);
-              }}
-              style={{width: '400px'}}
-            />
-          </SelectContainer>
-          <SelectContainer>
-            <Select
-              options={cities}
-              placeholder='Escolha uma cidade de destino...'
-              styles={selectStyles}
-              onChange={(e)=>{
-                  setEndCity(e.value);
-              }}
-            />
-          </SelectContainer>
+        <Container>
+          <SelectSection>
+            <SelectContainer>
+              <Select
+                options={cities}
+                placeholder='Escolha uma cidade inicial...'
+                styles={selectStyles}
+                onChange={(e)=>{
+                    setStartCity(e.value);
+                }}
+                style={{width: '400px'}}
+              />
+            </SelectContainer>
+            <SelectContainer>
+              <Select
+                options={cities}
+                placeholder='Escolha uma cidade de destino...'
+                styles={selectStyles}
+                onChange={(e)=>{
+                    setEndCity(e.value);
+                }}
+              />
+            </SelectContainer>
             <Button text='Localizar' onClick={findPath} />
-        </SelectSection>
-        <MapSection src={MapRD} width="850px" />
-        <Modal isOpen={isOpen} onRequestClose={handleCloseModal} style={customStyles}>
-            <PathSection>
-            {path && (
-                <List items={path} title='Melhor Rota' imageSrc={horseMan} />
-                )}
-            </PathSection>
-            <Button text='Fechar' onClick={handleCloseModal} />
-        </Modal>
-        <Footer>
-            <p>
-            powered by <strong>Vinicius Saturnino</strong> e <strong>Mateus Gomes</strong>
-            </p>
-        </Footer>
-        </SearchSection>
+          </SelectSection>
+          {isError && (
+            <ErrorMessageContainer>
+              <ErrorMessage>Pesquisa inválida, escolha as cidades novamente.</ErrorMessage>
+            </ErrorMessageContainer>
+          )}
+          <MapSection src={MapRD} width="850px" />
+          <Modal isOpen={isOpen} onRequestClose={handleCloseModal} style={customStyles}>
+              <PathSection>
+              {path && (
+                  <List items={path} title='Melhor Rota' imageSrc={horseMan} />
+                  )}
+              </PathSection>
+              <Button text='Fechar' onClick={handleCloseModal} />
+          </Modal>
+          <Footer>
+              <p>
+              powered by <strong>Vinicius Saturnino</strong> e <strong>Mateus Gomes</strong>
+              </p>
+          </Footer>
+        </Container>
       </>
   )
 };

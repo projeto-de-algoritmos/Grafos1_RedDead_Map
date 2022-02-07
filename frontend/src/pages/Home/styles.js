@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const SearchSection = styled.div`
+import { colors } from '../../theme/colors';
+
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,6 +21,15 @@ export const SelectSection = styled.div`
 export const SelectContainer = styled.div`
   width: 330px;
 `
+
+export const ErrorMessageContainer = styled.div`
+  align-self: start;
+  margin: 10px 0 0 545px;
+`;
+
+export const ErrorMessage = styled.p`
+  color: ${colors.red};
+`;
 
 export const PathSection = styled.div`
   margin-top: 25px;
