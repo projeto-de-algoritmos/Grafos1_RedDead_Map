@@ -4,14 +4,15 @@ import { colors } from '../../theme/colors';
 export const Container = styled.div`
   display: flex;
   background: ${colors.red};
-  height: 60px;
+  height: 80px;
   align-items: center;
+  justify-content: center;
   padding-left: 15px;
 `;
 
 export const Logo = styled.img`
-  width: 80px;
-  height: 80px;
+  width: 140px;
+  height: 130px;
 `;
 
 export const Text = styled.h1`
