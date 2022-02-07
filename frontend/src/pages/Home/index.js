@@ -70,22 +70,27 @@ const Home = () => {
   //load cities from api
   useEffect(()=> {
     const loadCities = async () => {
-      const { data } = await api.get('/cities');
-
-      const options = [];
-
-      data.forEach((e)=>{
-        options.push(
-          {
-            value: e,
-            label: e
-          }
-        );
-
-        return options;
-      })
-      
-      setCities(options);
+      try{
+        const { data } = await api.get('/cities');
+  
+        const options = [];
+  
+        data.forEach((e)=>{
+          options.push(
+            {
+              value: e,
+              label: e
+            }
+          );
+  
+          return options;
+        })
+        
+        setCities(options);
+      } catch(e) {
+        console.error(e);
+        setIsError(true);
+      }
     }
     
     loadCities();
@@ -99,15 +104,20 @@ const Home = () => {
 
     setIsError(false);
 
-    const { data } = await api.post('/path', {
-        start: startCity,
-        end: endCity
-    });
-    
-    setPath(data);
-    setIsOpen(true);
-
-    return data;
+    try {
+      const { data } = await api.post('/path', {
+          start: startCity,
+          end: endCity
+      });
+      
+      setPath(data);
+      setIsOpen(true);
+  
+      return data;
+    } catch(e) {
+      console.error(e);
+      setIsError(true);
+    }
   }
 
   return (
