@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import horseMan from '../../assets/horse_man.png';
+import MapRD from '../../assets/map.png';
 
 import api from '../../services/api';
 
@@ -10,7 +11,7 @@ import Select from 'react-select';
 import { Button } from '../../components/Button';
 import { List } from '../../components/List';
 
-import { SelectSection, PathSection } from './styles';
+import { SelectSection, PathSection, MapSection, SearchSection } from './styles';
 
 const Home = () => {
 
@@ -68,9 +69,9 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <SearchSection>
       <SelectSection>
-        <Select 
+        <Select
           options={cities}
           placeholder='Escolha uma cidade inicial...'
           styles={selectStyles}
@@ -78,7 +79,7 @@ const Home = () => {
             setStartCity(e.value);
           }}
         />
-        <Select 
+        <Select
           options={cities}
           placeholder='Escolha uma cidade de destino...'
           styles={selectStyles}
@@ -88,12 +89,13 @@ const Home = () => {
         />
         <Button text='Localizar' onClick={findPath} />
       </SelectSection>
+      <MapSection src={MapRD} width="850px" />
       <PathSection>
         {path && (
-          <List items={path} title='Rotas' imageSrc={horseMan} />
+          <List items={path} title='Melhor Rota' imageSrc={horseMan} />
         )}
       </PathSection>
-    </div>
+    </SearchSection>
   )
 };
 
