@@ -1,4 +1,4 @@
-from flask import json
+from flask import json, request
 from server import server
 from models import GraphModel
 
@@ -25,9 +25,9 @@ cities = {
             "Annesburg",
             "Rhodes"
         ],
-        "Mount Hagen": ["Valetine"],
+        "Mount Hagen": ["Valentine"],
         "Rhodes": [
-            "Valetine",
+            "Valentine",
             "Saint Denis",
             "Annesburg"
         ],
@@ -52,3 +52,11 @@ class RedDeadCitiesView():
     def get() -> dict:
         """get method"""
         return json.dumps(cities), 200
+
+    @app.route('/path', methods=['POST'])
+    def post() -> list:
+        """returns shortest path between two cities"""
+        body = request.get_json()
+        start = body.get("start")
+        end = body.get("end")
+        return json.dumps(graph.find_shortest_path(start=start, end=end))
