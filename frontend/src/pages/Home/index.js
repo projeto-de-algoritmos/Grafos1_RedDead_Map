@@ -142,7 +142,7 @@ const Home = () => {
               <ErrorMessage>Pesquisa inválida, escolha as cidades novamente.</ErrorMessage>
             </ErrorMessageContainer>
           )}
-          <MapSection src={MapRD} width="850px" />
+          <MapSection src={MapRD} />
           <Modal isOpen={isOpen} onRequestClose={handleCloseModal} style={customStyles}>
               <PathSection>
               {path && (

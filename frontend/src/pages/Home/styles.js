@@ -8,7 +8,6 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 35px;
-  height: 100vh;
 `;
 
 export const SelectSection = styled.div`
@@ -38,6 +37,7 @@ export const PathSection = styled.div`
 
 export const MapSection = styled.img`
 	margin-top: 35px;
+  width: 60%;
 `;
 
 export const Footer = styled.footer`
