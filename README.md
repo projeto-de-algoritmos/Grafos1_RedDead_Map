@@ -12,7 +12,12 @@
 | 18/0132245  |  Vinicius de Sousa Saturnino |
 
 ## Sobre
-Projeto de Grafo 1 para mostrar a menor rota entre o player e a missão atual no mapa de Read Dead Remeption 2 utilizando Grafo.
+
+Projeto de Grafos 1 para mostrar a menor rota entre as cidades do jogo Red Dead Redemption II, utilizando grafo e BFS.
+
+## Apresentação
+
+A apresentação do projeto pode ser vista no seguinte [link](https://youtu.be/MX91DB4iMIU).
 
 ## Screenshots
 
