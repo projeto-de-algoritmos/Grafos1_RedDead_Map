@@ -3,7 +3,7 @@
 ![Mapa Red Dead](./frontend/src/assets/logo.png)
 
 **Número da Lista**: 1<br>
-**Conteúdo da Disciplina**: Grafo 1<br>
+**Conteúdo da Disciplina**: Grafos 1<br>
 
 ## Alunos
 |Matrícula | Aluno |
